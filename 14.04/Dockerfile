@@ -18,10 +18,8 @@ ONBUILD COPY id_rsa.pub /root/.ssh/authorized_keys
 ONBUILD RUN chmod 700 /root/.ssh \
         && chmod 600 /root/.ssh/authorized_keys
 
-# supervisor configuration
-
 RUN echo 'root:root' | chpasswd
 
 EXPOSE 22
 
-CMD ["/etc/init.d/sshd","start"]
+CMD ["/etc/init.d/ssh","start"]
