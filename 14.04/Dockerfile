@@ -22,4 +22,4 @@ RUN echo 'root:root' | chpasswd
 
 EXPOSE 22
 
-CMD ["/etc/init.d/ssh","start"]
+CMD ["/usr/sbin/sshd","-D"]
